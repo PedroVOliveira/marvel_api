@@ -1,8 +1,18 @@
 import React from 'react'
 import CharacterListItem from '../CharacterListItem';
-const CharactersList = ({characters = [], isFetching = true, error,fetchData}) => {
+const style = {
+  root: {
+    backgroundColor:"#f0f0f0",
+    color:"black",
+  },
+  ul: {
+
+  }
+}
+
+const CharactersList = ({characters = [], isFetching = true, error,fetchData, styles={}}) => {
   return (
-    <div>
+    <div style={{...style.root}}>
       <button onClick={fetchData}>Refazer requisição</button>
       {isFetching && <p>Loading...</p>}
       {!isFetching && !error &&

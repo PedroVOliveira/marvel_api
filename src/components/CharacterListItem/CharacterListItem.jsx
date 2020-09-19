@@ -2,7 +2,7 @@ import React from 'react'
 
 const CharacterListItem = ({name,description}) => {
   return (
-    <li>
+    <li className="character-list-item">
       <h3>{name}</h3>
       <p>{description}</p>
     </li>
