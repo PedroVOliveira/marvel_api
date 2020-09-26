@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const Button = () => {
-  return (
-    <div>
-      <button>Favoritar</button>
-    </div>
+const Button = ({onClick, children, palette = ''}) => {
 
-  )
+    const classes = 
+        `button ${palette === 'alert' && 'button-alert' || ''} ${palette === 'success' && 'button-success' || ''} `
+
+    return (
+        <button className={classes} onClick={onClick}> {children} </button>
+    );
+
 }
 
 export default Button;
