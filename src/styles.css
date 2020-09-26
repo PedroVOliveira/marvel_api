@@ -8,6 +8,10 @@ body,html {
   height:100vh;
 }
 
+.App {
+  display: flex;
+}
+
 .characteres-list {
   list-style: none;
 }

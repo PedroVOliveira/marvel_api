@@ -1,5 +1,6 @@
 import React from 'react'
 import CharacterListItem from '../CharacterListItem';
+import {useCharactersContext} from '../../contexts/Characters'
 
 const style = {
   root: {
@@ -11,8 +12,8 @@ const style = {
   }
 }
 
-const CharactersList = ({ characters = [], isFetching = true, error, fetchData, onFavorite, onUnfavorite, favorites }) => {
-  console.log(characters);
+const CharactersList = () => {
+  const { characters, isFetching, error, fetchData} = useCharactersContext();
   return (
     <div style={{ ...style.root }}>
       <button onClick={fetchData}>Refazer requisição</button>
@@ -25,9 +26,6 @@ const CharactersList = ({ characters = [], isFetching = true, error, fetchData, 
               id={character.id}
               name={character.name}
               description={character.description}
-              onFavorite={onFavorite} 
-              onUnfavorite={onUnfavorite}
-              favorites={favorites}
             />)}
         </ul>
       }

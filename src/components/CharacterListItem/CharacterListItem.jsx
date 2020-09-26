@@ -1,7 +1,9 @@
 import React from 'react'
 import Button from '../Button';
+import {useCharactersContext} from '../../contexts/Characters'
 
-const CharacterListItem = ({ name, id, description, onFavorite, onUnfavorite ,favorites = {}}) => {
+const CharacterListItem = ({ name, id, description}) => {
+  const { favorites, onFavorite, onUnfavorite } = useCharactersContext();
 
   const [isFavorite, setIsFavorite] = React.useState(false);
 
