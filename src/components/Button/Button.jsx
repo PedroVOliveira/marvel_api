@@ -5,6 +5,7 @@ const Button = () => {
     <div>
       <button>Favoritar</button>
     </div>
+
   )
 }
 
